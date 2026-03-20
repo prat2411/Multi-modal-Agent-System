@@ -136,7 +136,16 @@ def retrieve(question: str, chunks: list[dict], top_k: int, df: dict[str, int]) 
 
 def is_greeting(text: str) -> bool:
     cleaned = text.strip().lower()
-    return cleaned in {"hi", "hey", "hello", "yo", "hiya", "hey!", "hello!"}
+    # Keep letters only so variants like "hi!!" or "hello..." are handled.
+    letters_only = "".join(ch for ch in cleaned if ch.isalpha())
+    if not letters_only:
+        return False
+
+    if letters_only in {"hi", "hey", "hello", "yo", "hiya"}:
+        return True
+
+    # Accept common stretched forms such as "hiii" or "hellooo".
+    return bool(re.fullmatch(r"h+i+|he+y+|hello+|yo+", letters_only))
 
 
 def ask_groq(client: Groq, question: str, contexts: list[dict]) -> str:
