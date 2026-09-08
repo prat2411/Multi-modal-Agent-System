@@ -1,0 +1,29 @@
+[
+  {
+    "deal": {
+      "product_description": "Samsung Galaxy Watch Ultra 47mm LTE Titanium smartwatch with GPS tracking, health monitoring, notifications, music control, and heart rate tracking.",
+      "price": 350.0,
+      "url": "https://www.dealnews.com/"
+    },
+    "estimate": 775.0,
+    "discount": 425.0
+  },
+  {
+    "deal": {
+      "product_description": "Refurbished unlocked Apple iPhone 14 Pro Max with 256GB storage, a large display, advanced camera technology, 5G, and support for current App Store applications.",
+      "price": 705.0,
+      "url": "https://www.dealnews.com/products/Apple/"
+    },
+    "estimate": 930.0,
+    "discount": 225.0
+  },
+  {
+    "deal": {
+      "product_description": "USB-C wireless noise-cancelling headphones with long battery life, comfortable ear cushions, and multipoint device support.",
+      "price": 119.0,
+      "url": "https://www.dealnews.com/"
+    },
+    "estimate": 280.0,
+    "discount": 161.0
+  }
+]
