@@ -1,0 +1,65 @@
+[
+  {
+    "deal": {
+      "product_description": "Samsung Galaxy Watch Ultra 47mm LTE Titanium smartwatch with GPS tracking, health monitoring, notifications, music control, and heart rate tracking.",
+      "price": 350.0,
+      "url": "https://www.dealnews.com/"
+    },
+    "estimate": 775.0,
+    "discount": 425.0
+  },
+  {
+    "deal": {
+      "product_description": "Refurbished unlocked Apple iPhone 14 Pro Max with 256GB storage, a large display, advanced camera technology, 5G, and support for current App Store applications.",
+      "price": 705.0,
+      "url": "https://www.dealnews.com/products/Apple/"
+    },
+    "estimate": 930.0,
+    "discount": 225.0
+  },
+  {
+    "deal": {
+      "product_description": "USB-C wireless noise-cancelling headphones with long battery life, comfortable ear cushions, and multipoint device support.",
+      "price": 119.0,
+      "url": "https://www.dealnews.com/"
+    },
+    "estimate": 280.0,
+    "discount": 161.0
+  },
+  {
+    "deal": {
+      "product_description": "Apple MacBook Air 13-inch laptop with M2 chip, 8GB RAM, 256GB SSD, Retina display, and all-day battery life for productivity and creative work.",
+      "price": 824.0,
+      "url": "https://www.dealnews.com/products/Apple/"
+    },
+    "estimate": 850.0,
+    "discount": 26.0
+  },
+  {
+    "deal": {
+      "product_description": "Apple Watch Series 9 GPS 45mm aluminum smartwatch with fitness tracking, ECG monitoring, notifications, and cellular-ready convenience.",
+      "price": 329.0,
+      "url": "https://www.dealnews.com/products/Apple/"
+    },
+    "estimate": 775.0,
+    "discount": 446.0
+  },
+  {
+    "deal": {
+      "product_description": "USB-C podcast microphone kit with cardioid pickup pattern, shock mount, and low-noise audio capture for streaming and voice work.",
+      "price": 199.0,
+      "url": "https://www.dealnews.com/"
+    },
+    "estimate": 280.0,
+    "discount": 81.0
+  },
+  {
+    "deal": {
+      "product_description": "Refurbished Apple iPhone 15 Pro with 128GB storage, titanium finish, triple-lens camera, and support for premium mobile apps and photography workflows.",
+      "price": 650.0,
+      "url": "https://www.dealnews.com/products/Apple/"
+    },
+    "estimate": 930.0,
+    "discount": 280.0
+  }
+]
