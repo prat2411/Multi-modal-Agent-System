@@ -8,6 +8,7 @@ from groq import Groq
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data" / "deals.json"
+DEFAULT_GROQ_MODEL = "llama-3.1-8b-instant"
 load_dotenv(ROOT / ".env")
 
 
@@ -43,7 +44,7 @@ class DealStore:
         if not api_key:
             return self.run_local_estimates(deals)
 
-        model = setting("GROQ_MODEL", "llama-3.3-70b-versatile")
+        model = setting("GROQ_MODEL", DEFAULT_GROQ_MODEL)
         client = Groq(api_key=api_key)
         descriptions = [item["deal"]["product_description"] for item in deals]
         prompt = (
@@ -52,18 +53,35 @@ class DealStore:
             "in the same order as the products. Products:\n"
             + json.dumps(descriptions)
         )
-        response = client.chat.completions.create(
-            model=model,
-            temperature=0,
-            response_format={"type": "json_object"},
-            messages=[
-                {
-                    "role": "system",
-                    "content": "You are a careful product price estimation assistant.",
-                },
-                {"role": "user", "content": prompt},
-            ],
-        )
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                temperature=0,
+                response_format={"type": "json_object"},
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a careful product price estimation assistant.",
+                    },
+                    {"role": "user", "content": prompt},
+                ],
+            )
+        except Exception as error:
+            message = str(error).lower()
+            if model == DEFAULT_GROQ_MODEL or "model_not_found" not in message:
+                raise
+            response = client.chat.completions.create(
+                model=DEFAULT_GROQ_MODEL,
+                temperature=0,
+                response_format={"type": "json_object"},
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a careful product price estimation assistant.",
+                    },
+                    {"role": "user", "content": prompt},
+                ],
+            )
         estimates = json.loads(response.choices[0].message.content)["estimates"]
         if len(estimates) != len(deals):
             raise ValueError("Groq returned the wrong number of estimates")

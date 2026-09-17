@@ -20,7 +20,7 @@ Create `.env` from `.env.example`, then add your Groq key:
 
 ```env
 GROQ_API_KEY=your_groq_api_key_here
-GROQ_MODEL=llama-3.3-70b-versatile
+GROQ_MODEL=llama-3.1-8b-instant
 ```
 
 Start the app:
@@ -52,6 +52,6 @@ Project/
 
 `GROQ_API_KEY` enables Groq-powered estimates.
 
-`GROQ_MODEL` is optional. The default is `llama-3.3-70b-versatile`.
+`GROQ_MODEL` is optional. The default is `llama-3.1-8b-instant`.
 
  The current app is the simple deployable version of that project.
