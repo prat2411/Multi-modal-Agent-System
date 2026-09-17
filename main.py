@@ -103,7 +103,7 @@ def money(value):
 
 st.set_page_config(page_title="The Price Is Right", page_icon="$", layout="wide")
 st.title("The Price Is Right")
-st.caption("A Groq-powered deal intelligence dashboard based on Multimodal agent workflow.")
+st.caption("A Groq-powered deal intelligence dashboard based on the Week 8 agent workflow.")
 
 if "deals" not in st.session_state:
     st.session_state.deals = store.load()
